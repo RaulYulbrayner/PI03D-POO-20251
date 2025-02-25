@@ -29,6 +29,54 @@ public class Ninio {
         this.nombres = nombres;
     }
 
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public String getNumeroContactoAcudiente() {
+        return numeroContactoAcudiente;
+    }
+
+    public void setNumeroContactoAcudiente(String numeroContactoAcudiente) {
+        this.numeroContactoAcudiente = numeroContactoAcudiente;
+    }
+
+    public String getNombreAcudiente() {
+        return nombreAcudiente;
+    }
+
+    public void setNombreAcudiente(String nombreAcudiente) {
+        this.nombreAcudiente = nombreAcudiente;
+    }
+
+    public String getAlergias() {
+        return alergias;
+    }
+
+    public void setAlergias(String alergias) {
+        this.alergias = alergias;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
     public String getDocumento() {
         return documento;
     }

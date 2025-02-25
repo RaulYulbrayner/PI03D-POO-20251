@@ -13,8 +13,45 @@ public class Guarderia {
         this.listNinios = new ArrayList<>();
     }
 
+    public boolean verificarNinio(Ninio ninio){
+        boolean existe = true;
+        for(Ninio ninios : listNinios){
+            if(ninios.getID().equals(ninio.getID())){
+                existe = false;
+            }
+        }
+        return existe;
+    }
+
+    public void eliminarNinio(String ID){
+        Boolean ninioEliminar = false;
+        for(int i = 0; i < listNinios.size(); i++){
+            if(listNinios.get(i).getID().equals(ID)){
+                listNinios.remove(i);
+                ninioEliminar = true;
+                break;
+            }
+        }
+    }
+
+    public void actualizarNinio(String ID, Ninio ninio){
+        Boolean ninioActualizar = false;
+        for(int i = 0; i < listNinios.size(); i++){
+            if(listNinios.get(i).getID().equals(ID)){
+                listNinios.set(i, ninio);
+                ninioActualizar = true;
+                break;
+            }
+        }
+    }
+
     public void almacenarNinios(Ninio ninio) {
-        listNinios.add(ninio);
+        if(verificarNinio(ninio)){
+            listNinios.add(ninio);
+            System.out.println("Niño almacenado com exito");
+        }else{
+            System.out.println("Niño ya esta almacenado");
+        }
     }
 
     @Override
