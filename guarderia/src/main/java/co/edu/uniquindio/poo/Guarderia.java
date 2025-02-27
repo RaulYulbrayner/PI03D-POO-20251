@@ -34,6 +34,31 @@ public class Guarderia {
         }
     }
 
+    public boolean esPalindromo(String nombre){
+        int inicio = 0;
+        int fin = nombre.length()-1;
+        boolean palindromo = true;
+        while(inicio < fin){
+            if(nombre.charAt(inicio)!=nombre.charAt(fin)){
+                palindromo = false;
+            }
+            inicio++;
+            fin--;
+        }
+        return palindromo;
+    }
+
+    public List<String> nombresPalindromos(){
+        List<String> nombresPalindromos = new ArrayList<>();
+        for(Ninio ninio : listNinios){
+            String nombre = ninio.getNombres();
+            if(esPalindromo(nombre)){
+                nombresPalindromos.add(nombre);
+            }
+        }
+        return nombresPalindromos;
+    }
+
     public void actualizarNinio(String ID, Ninio ninio){
         Boolean ninioActualizar = false;
         for(int i = 0; i < listNinios.size(); i++){

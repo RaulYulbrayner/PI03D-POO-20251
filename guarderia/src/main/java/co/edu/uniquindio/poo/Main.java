@@ -12,13 +12,14 @@ public class Main {
 
         int opcion = 0;
 
-        while (opcion != 5) {
+        while (opcion != 6) {
             System.out.println("\n Menu interativo de la guarderia");
             System.out.println("1. Agregar Niño");
             System.out.println("2. Eliminar Niño");
             System.out.println("3. Actualizar Niño");
             System.out.println("4. Mostrar lista de Niños");
-            System.out.println("5. Salir");
+            System.out.println("5. Mostrar nombres palindromos");
+            System.out.println("6. Salir");
 
             //----------------------------------
 
@@ -53,6 +54,7 @@ public class Main {
                 System.out.println("Ingrese ID del Niño a elimianr: ");
                 String IDEliminarNinio = scanner.nextLine();
                 guarderia.eliminarNinio(IDEliminarNinio);
+
             } else if (opcion == 3) {
                 System.out.println("Ingrese el ID del Niño a actualizar: ");
                 String IDActualizar = scanner.nextLine();
@@ -77,14 +79,20 @@ public class Main {
 
                 Ninio ninio = new Ninio(nombre, edad, genero, documento, alergia, acudiente, contactoAcudiente, ID);
                 guarderia.actualizarNinio(IDActualizar, ninio);
+
             } else if (opcion == 4) {
                 System.out.println("Mostrar la lista de niños almacenados: ");
                 for(Ninio ninio : guarderia.getListNinios()){
                     System.out.println(ninio);
                 }
+
             } else if (opcion == 5) {
+                System.out.println("Lista de niños palindromos: ");
+                System.out.println(guarderia.nombresPalindromos());
+            } else if (opcion == 6) {
                 System.out.println("Chaooo pues.............. ");
                 break;
+
             }else {
                 System.out.println("Opcion no valida");
             }
