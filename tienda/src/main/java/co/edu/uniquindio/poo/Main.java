@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo;
 
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -10,9 +12,9 @@ public class Main {
 
         // Creamos los productos
         Producto producto1 = new Producto("Alpinito Surtido", "Lácteos", 5550, 101, 10);
-        Producto producto2 = new Producto("Arepa de Chocolo", "Alimentos y despensa", 2990, 102, 20);
+        Producto producto2 = new Producto("Arepa de Chocolo", "Alimentos y despensa", 2990, 102, 25);
         Producto producto3 = new Producto("Lavaloza", "Aseo", 1980, 103, 15);
-        Producto producto4 = new Producto("Agua Natural 500 ml", "Bebidas", 3350, 103, 15);
+        Producto producto4 = new Producto("Huevo", "Alimentos y despensa", 500, 150, 15);
         tienda.registrarProducto(producto1);
         tienda.registrarProducto(producto2);
         tienda.registrarProducto(producto3);
@@ -29,7 +31,7 @@ public class Main {
         // Creamos y registramos las ventas
         Venta venta1 = new Venta("2025-03-06", 0.19, cliente1);
         venta1.agregarDetalle(new DetalleVenta(2, producto1));
-        venta1.agregarDetalle(new DetalleVenta(1, producto4));
+        venta1.agregarDetalle(new DetalleVenta(5, producto4));
         tienda.crearVentas(venta1);
 
         Venta venta2 = new Venta("2025-03-07", 0.19, cliente2);
@@ -56,6 +58,28 @@ public class Main {
         }
         System.out.println("---------------------------------------------------");
         System.out.println("Total de ventas en toda la tienda: " + tienda.calcularTotalDeVentas());
+
+        System.out.println("---------------------------------------------------");
+        System.out.println("SOLUCIÓN PUNTO 2A");
+        String nombre = cliente1.getNombre();
+        int cantidadVocales = tienda.contarVocalesEnNombreCliente(nombre);
+        System.out.println("El nombre '" + nombre + "' tiene " + cantidadVocales + " vocales.");
+
+        System.out.println("---------------------------------------------------");
+        System.out.println("SOLUCIÓN PUNTO 2B");
+        List<Producto> productosFiltrados = tienda.obtenerProductosConStockEntre20y55();
+        System.out.println("Productos con stock entre 20 y 55:");
+        for (Producto producto : productosFiltrados) {
+            System.out.println(" - " + producto.getNombre() + " (Stock: " + producto.getStock() + ")");
+        }
+
+        System.out.println("---------------------------------------------------");
+        System.out.println("SOLUCIÓN PUNTO 2C");
+        List<Cliente> clientesQueCompraronHuevos = tienda.obtenerClientesQueCompraronCincoHuevos();
+        System.out.println("Clientes que compraron exactamente 5 huevos:");
+        for (Cliente cliente : clientesQueCompraronHuevos) {
+            System.out.println(" - " + cliente.getNombre());
+        }
 
     }
 }
