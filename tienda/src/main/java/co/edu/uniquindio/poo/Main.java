@@ -14,7 +14,7 @@ public class Main {
         Producto producto1 = new Producto("Alpinito Surtido", "Lácteos", 5550, 101, 10);
         Producto producto2 = new Producto("Arepa de Chocolo", "Alimentos y despensa", 2990, 102, 25);
         Producto producto3 = new Producto("Lavaloza", "Aseo", 1980, 103, 15);
-        Producto producto4 = new Producto("Huevo", "Alimentos y despensa", 500, 150, 15);
+        Producto producto4 = new Producto("Huevo", "Alimentos y despensa", 500, 150, 5);
         tienda.registrarProducto(producto1);
         tienda.registrarProducto(producto2);
         tienda.registrarProducto(producto3);
