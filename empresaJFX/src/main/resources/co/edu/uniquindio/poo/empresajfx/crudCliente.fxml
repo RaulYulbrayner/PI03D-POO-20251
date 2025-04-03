@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.empresajfx.viewController.ClienteViewController">
+    <children>
+        <SplitPane dividerPositions="0.5159574468085106" orientation="VERTICAL" prefHeight="566.0" prefWidth="429.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="288.0" prefWidth="401.0">
+                    <children>
+                        <Pane layoutX="34.0" layoutY="20.0" prefHeight="249.0" prefWidth="360.0" style="-fx-border-image-width: 1px;">
+                            <effect>
+                                <Blend />
+                            </effect>
+                            <children>
+                                <Label layoutX="118.0" layoutY="14.0" text="Gestión Clientes">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="41.0" layoutY="58.0" prefHeight="17.0" prefWidth="64.0" text="Cedula:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="41.0" layoutY="92.0" text="Nombre:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="41.0" layoutY="124.0" text="Apellido:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtCedula" layoutX="126.0" layoutY="59.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtNombre" layoutX="126.0" layoutY="93.0" prefHeight="25.0" prefWidth="194.0" />
+                                <TextField fx:id="txtApellido" layoutX="126.0" layoutY="125.0" prefHeight="25.0" prefWidth="194.0" />
+                                <Button fx:id="btbAgregarCliente" layoutX="64.0" layoutY="182.0" mnemonicParsing="false" onAction="#onAgregarCliente" text="Agregar cliente" />
+                                <Button fx:id="btnActualizarCliente" layoutX="191.0" layoutY="182.0" mnemonicParsing="false" onAction="#onActualizarCliente" text="Actualizar cliente" />
+                            </children>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="645.0">
+                    <children>
+                        <TableView fx:id="tblListCliente" layoutX="7.0" layoutY="7.0" prefHeight="206.0" prefWidth="412.0">
+                            <columns>
+                                <TableColumn fx:id="tbcCedula" prefWidth="75.0" text="Cedula" />
+                                <TableColumn fx:id="tbcNombre" prefWidth="75.0" text="Nombre" />
+                                <TableColumn fx:id="tbcApellido" prefWidth="75.0" text="Apellido" />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="btnLimpiar" layoutX="93.0" layoutY="223.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="106.0" text="Limpiar" />
+                        <Button fx:id="btnEliminar" layoutX="234.0" layoutY="223.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
+

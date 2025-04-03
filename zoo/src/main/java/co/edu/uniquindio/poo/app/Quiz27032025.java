@@ -31,5 +31,4 @@ public class Quiz27032025 {
 
         procesarPositivos();
     }
-
 }
