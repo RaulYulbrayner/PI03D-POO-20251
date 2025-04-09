@@ -13,12 +13,12 @@ public abstract class Vehiculo {
     protected EstadoOperativo estadoOperativo;
     protected List<Mision> listMisiones;
 
-    public Vehiculo(String id, String modelo, int anioFabricacion, double kilometraje, EstadoOperativo estadoOperativo) {
+    public Vehiculo(String id, String modelo, int anioFabricacion, double kilometraje, EstadoOperativo estadoOperativo, int misionesCompletadas) {
         this.id = id;
         this.modelo = modelo;
         this.anioFabricacion = anioFabricacion;
         this.kilometraje = kilometraje;
-        this.misionesCompletadas = 0;
+        this.misionesCompletadas = misionesCompletadas;
         this.estadoOperativo = estadoOperativo;
 
         this.listMisiones = new ArrayList<>();
@@ -83,4 +83,12 @@ public abstract class Vehiculo {
     public void setListMisiones(List<Mision> listMisiones) {
         this.listMisiones = listMisiones;
     }
+
+    public void incrementarKilometraje(int km) {
+        if(km < 0){
+            throw new IllegalArgumentException("Kilometraje no puede ser negativo");
+        }
+        this.kilometraje += km;
+    }
+
 }

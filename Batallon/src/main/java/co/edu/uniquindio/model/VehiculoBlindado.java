@@ -3,10 +3,9 @@ package co.edu.uniquindio.model;
 public class VehiculoBlindado extends Vehiculo {
     private int nivelBlindaje;
 
-    public VehiculoBlindado(String id, String modelo, int anioFabricacion, double kilometraje, EstadoOperativo estadoOperativo, int nivelBlindaje) {
-        super(id, modelo, anioFabricacion, kilometraje, estadoOperativo);
-
-    this.nivelBlindaje = nivelBlindaje;
+    public VehiculoBlindado(String id, String modelo, int anioFabricacion, double kilometraje, EstadoOperativo estadoOperativo, int misionesCompletadas, int nivelBlindaje) {
+        super(id, modelo, anioFabricacion, kilometraje, estadoOperativo, misionesCompletadas);
+        this.nivelBlindaje = nivelBlindaje;
     }
 
     @Override

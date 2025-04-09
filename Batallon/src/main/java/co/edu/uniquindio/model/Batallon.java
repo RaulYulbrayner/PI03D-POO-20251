@@ -25,7 +25,6 @@ public class Batallon {
     public List<Vehiculo> obtenerVehiculosCantMisiones() {
         List<Vehiculo> vehiculosMisionesCompletadas = new ArrayList<>();
 
-
         for (VehiculoApoyo vehiculo : listVehiculosApoyo) {
             if (vehiculo.getMisionesCompletadas() > 50){
                 vehiculosMisionesCompletadas.add(vehiculo);
