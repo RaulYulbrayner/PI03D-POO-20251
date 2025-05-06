@@ -30,8 +30,11 @@ public class Main {
         // Crear y registrar rutas
         Ruta ruta1 = new Ruta("Armenia", "Pereira", 1, 45);
         Ruta ruta2 = new Ruta("Bogotá", "Cali", 8, 400);
+        Ruta ruta3 = new Ruta("Manizales", "Medellín", 6, 250);
+
         empresa.registrarRuta(ruta1);
         empresa.registrarRuta(ruta2);
+        empresa.registrarRuta(ruta3);
 
         // Crear pasajeros
         List<Pasajero> pasajeros = List.of(
@@ -39,13 +42,16 @@ public class Main {
                 new Pasajero("Carlos Ruiz", "222", false)
         );
 
-        // Crear y registrar reservas
-        Reserva reserva1 = new Reserva(bus, conductor, ruta1, pasajeros);
-        Reserva reserva2 = new Reserva(van, conductor, ruta2, pasajeros);
+        // Crear y registrar reservas (con IDs únicos)
+        Reserva reserva1 = new Reserva(1, bus, conductor, ruta1, pasajeros);
+        Reserva reserva2 = new Reserva(2, van, conductor, ruta2, pasajeros);
+        Reserva reserva3 = new Reserva(3, microbus, conductor, ruta3, pasajeros);
+
         empresa.registrarReserva(reserva1);
         empresa.registrarReserva(reserva2);
+        empresa.registrarReserva(reserva3);
 
-        // Mostrar resumen de reservas
+        // Mostrar resumen de todas las reservas
         System.out.println("=== RESUMEN DE TODAS LAS RESERVAS ===");
         empresa.mostrarTodasLasReservas();
 
@@ -55,5 +61,10 @@ public class Main {
         for (Vehiculo vehiculo : reservados) {
             System.out.println("Placa: " + vehiculo.getPlaca() + ", Modelo: " + vehiculo.getModelo());
         }
+
+        // Calcular y mostrar el costo de una reserva por ruta y vehículo (sin try-catch)
+        double costoRutaVehiculo = empresa.calcularCostoReservaPorRutaYVehiculo("Bogotá", "Cali", "DEF002");
+        System.out.println("\nCosto de la reserva (Bogotá–Cali, DEF002): $" + costoRutaVehiculo);
+
     }
 }

@@ -28,14 +28,13 @@ class EmpresaTest {
 
         List<Pasajero> pasajeros = List.of(new Pasajero("Ana", "111", true));
 
-        empresa.registrarReserva(new Reserva(bus, conductor, ruta1, pasajeros));
-        empresa.registrarReserva(new Reserva(van, conductor, ruta2, pasajeros));
+        empresa.registrarReserva(new Reserva(1, bus, conductor, ruta1, pasajeros));
+        empresa.registrarReserva(new Reserva(2, van, conductor, ruta2, pasajeros));
 
         List<Vehiculo> resultado = empresa.obtenerVehiculosPorRuta("Armenia", "Pereira");
 
         assertEquals(1, resultado.size());
         assertEquals("ABC001", resultado.get(0).getPlaca());
     }
-
 
 }

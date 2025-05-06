@@ -9,6 +9,7 @@ public class Reserva {
     private Vehiculo vehiculo;
     private Conductor conductor;
     private Ruta ruta;
+    private int idReserva;
     private List<Pasajero> pasajeros;
 
     /**
@@ -19,7 +20,8 @@ public class Reserva {
      * @param ruta Ruta del viaje.
      * @param pasajeros Lista de pasajeros.
      */
-    public Reserva(Vehiculo vehiculo, Conductor conductor, Ruta ruta, List<Pasajero> pasajeros) {
+    public Reserva(int idReserva, Vehiculo vehiculo, Conductor conductor, Ruta ruta, List<Pasajero> pasajeros) {
+        this.idReserva = idReserva;
         this.vehiculo = vehiculo;
         this.conductor = conductor;
         this.ruta = ruta;
@@ -65,5 +67,13 @@ public class Reserva {
 
     public void setRuta(Ruta ruta) {
         this.ruta = ruta;
+    }
+
+    public int getIdReserva() {
+        return idReserva;
+    }
+
+    public void setIdReserva(int idReserva) {
+        this.idReserva = idReserva;
     }
 }

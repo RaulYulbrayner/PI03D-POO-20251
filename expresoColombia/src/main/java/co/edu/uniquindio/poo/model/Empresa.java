@@ -12,6 +12,7 @@ public class Empresa {
     private List<Conductor> conductores;
     private List<Ruta> rutas;
     private List<Reserva> reservas;
+    private List<Pasajero> pasajeros;
 
     /**
      * Constructor de la empresa.
@@ -60,6 +61,14 @@ public class Empresa {
     }
 
     /**
+     * Registra un pasajero
+     * @param pasajero
+     */
+    public void registrarPasajero(Pasajero pasajero) {
+        pasajeros.add(pasajero);
+    }
+
+    /**
      * Muestra todas las reservas registradas.
      */
     public void mostrarTodasLasReservas() {
@@ -86,6 +95,27 @@ public class Empresa {
         return resultado;
     }
 
+    /**
+     * Metodo que calcula el costo de una reserva dado el origen, destino y la placa del vehículo.
+     * Lanza una excepción si no se encuentra la reserva.
+     * @param origen
+     * @param destino
+     * @param placaVehiculo
+     * @return
+     */
+    public double calcularCostoReservaPorRutaYVehiculo(String origen, String destino, String placaVehiculo) {
+        for (Reserva reserva : reservas) {
+            Ruta ruta = reserva.getRuta();
+            Vehiculo vehiculo = reserva.getVehiculo();
+
+            if (ruta.origen().equals(origen)
+                    && ruta.destino().equals(destino)
+                    && vehiculo.getPlaca().equals(placaVehiculo)) {
+                return vehiculo.calcularCosto();
+            }
+        }
+        throw new IllegalArgumentException("No se encontró una reserva con esa ruta y placa de vehículo");
+    }
 
     public String getNombre() {
         return nombre;
@@ -125,5 +155,13 @@ public class Empresa {
 
     public void setReservas(List<Reserva> reservas) {
         this.reservas = reservas;
+    }
+
+    public List<Pasajero> getPasajeros() {
+        return pasajeros;
+    }
+
+    public void setPasajeros(List<Pasajero> pasajeros) {
+        this.pasajeros = pasajeros;
     }
 }
