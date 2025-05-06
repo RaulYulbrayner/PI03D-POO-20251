@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo.model;
 /**
  * Representa un vehículo tipo Bus.
  */
-public class Bus extends  Vehiculo {
+public class Bus extends Vehiculo {
 
     private int ejes;
     private boolean tieneBanio;
@@ -44,4 +44,5 @@ public class Bus extends  Vehiculo {
     public void setTieneBanio(boolean tieneBanio) {
         this.tieneBanio = tieneBanio;
     }
+
 }

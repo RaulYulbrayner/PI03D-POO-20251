@@ -87,7 +87,7 @@ public class Empresa {
     public List<Vehiculo> obtenerVehiculosPorRuta(String origen, String destino) {
         List<Vehiculo> resultado = new ArrayList<>();
         for (Reserva reserva : reservas) {
-            if (reserva.getRuta().origen().equals(origen) &&
+            if (reserva.getRuta().origen().equalsIgnoreCase(origen) &&
                     reserva.getRuta().destino().equals(destino)) {
                 resultado.add(reserva.getVehiculo());
             }
