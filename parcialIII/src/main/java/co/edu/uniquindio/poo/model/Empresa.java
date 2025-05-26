@@ -32,7 +32,6 @@ public class Empresa {
      * @return Producto con mayor utilidad.
      */
     public Producto obtenerProductoMayorUtilidad() {
-        if (productos.isEmpty()) return null;
         Producto mayor = productos.get(0);
         double utilidadMayor = mayor.calcularPrecioVenta() - mayor.getPrecioCompra();
 
